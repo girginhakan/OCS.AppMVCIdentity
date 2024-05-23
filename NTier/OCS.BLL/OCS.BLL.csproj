@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OCS.DAL\OCS.DAL.csproj" />
+    <ProjectReference Include="..\OCS.DTO\OCS.DTO.csproj" />
+    <ProjectReference Include="..\OCS.ViewModel\OCS.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
