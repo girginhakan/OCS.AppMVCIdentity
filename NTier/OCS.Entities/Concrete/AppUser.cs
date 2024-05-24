@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
+using OCS.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace OCS.Entities.Concrete
 {
-    public class AppUser
+    public class AppUser:IdentityUser<int>
     {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Gender Gender { get; set; }
+
         public bool IsSubscriber { get; set; }
         public DateTime? SubscriptionStartDate { get; set; }
         public DateTime? SubscriptionEndDate { get; set; }

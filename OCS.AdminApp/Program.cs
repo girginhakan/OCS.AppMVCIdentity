@@ -1,3 +1,9 @@
+
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using OCS.DAL.Data;
+using OCS.Entities.Concrete;
+
 namespace OCS.AdminApp
 {
     public class Program
@@ -8,6 +14,15 @@ namespace OCS.AdminApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<OCSDbContext>(opt =>
+            {
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("OCSAppDbStr"));
+            });
+
+            builder.Services.AddIdentityCore<AppUser>()
+                .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<OCSDbContext>();
 
             var app = builder.Build();
 

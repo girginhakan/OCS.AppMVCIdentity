@@ -10,14 +10,15 @@ namespace OCS.Entities.Concrete
     public class Review : BaseEntity
     {
         public int ProductId { get; set; }
-        public Product Product { get; set; }
-        //public int UserId { get; set; }
+        public int AppUserId { get; set; }
         public int Rating { get; set; }
         public string Comment { get; set; }
         public DateTime ReviewDate { get; set; }
 
 
-        //public User User{ get; set; }
+        public AppUser AppUser{ get; set; }
+        public Product Product { get; set; }
+
 
 
     }
