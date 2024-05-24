@@ -13,7 +13,7 @@ namespace OCS.Entities.Concrete
         public DateTime? SubscriptionStartDate { get; set; }
         public DateTime? SubscriptionEndDate { get; set; }
         public int DailyFreeItemCount { get; set; } = 5; // Günlük ücretsiz alınabilecek kahve sayısı
-
+        public DateTime? LastFreeItemDate { get; set; }
         //Buraya birde bir kahve aldıktan sonra diğerini alabilmesi için en az 1 saat geçmesi gerekmektedir ve aynı anda 2 veya daha fazla kahve alınamamaktadır.
 
         // Navigation properties
