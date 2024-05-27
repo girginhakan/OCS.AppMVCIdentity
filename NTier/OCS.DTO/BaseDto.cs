@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.Common.Enums
+namespace OCS.DTO
 {
-    public enum Gender
+    public class BaseDto
     {
-        None,
-        Male,
-        Female
+        public int Id { get; set; }
     }
 }

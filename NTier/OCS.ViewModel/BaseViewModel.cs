@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.Common.Enums
+namespace OCS.ViewModel
 {
-    public enum Gender
+    public abstract class BaseViewModel
     {
-        None,
-        Male,
-        Female
     }
 }

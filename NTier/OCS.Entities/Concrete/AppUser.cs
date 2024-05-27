@@ -13,7 +13,7 @@ namespace OCS.Entities.Concrete
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateOnly BirthDate { get; set; }
         public Gender Gender { get; set; }
 
         public bool IsSubscriber { get; set; }

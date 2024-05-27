@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OCS.DAL.Data;
 
@@ -11,9 +12,11 @@ using OCS.DAL.Data;
 namespace OCS.DAL.Migrations
 {
     [DbContext(typeof(OCSDbContext))]
-    partial class OCSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240525101017_Admin user and Admin Role Init")]
+    partial class AdminuserandAdminRoleInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
