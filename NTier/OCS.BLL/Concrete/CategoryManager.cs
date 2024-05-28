@@ -1,5 +1,6 @@
 ﻿using OCS.BLL.Abstract;
 using OCS.DAL.Services.Abstract;
+using OCS.DAL.Services.Concrete;
 using OCS.DTO;
 using OCS.Entities.Concrete;
 using OCS.ViewModel.Category;
@@ -13,8 +14,9 @@ namespace OCS.BLL.Concrete
 {
     public class CategoryManager : Manager<CategoryDto, CategoryViewModel, Category>
     {
-        public CategoryManager(Service<Category, CategoryDto> service) : base(service)
+        public CategoryManager(CategoryService service) : base(service)
         {
         }
+        
     }
 }

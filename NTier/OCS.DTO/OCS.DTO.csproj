@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OCS.Common\OCS.Common.csproj" />
+    <ProjectReference Include="..\OCS.Entities\OCS.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

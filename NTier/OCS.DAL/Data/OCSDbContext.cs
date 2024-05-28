@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace OCS.DAL.Data
 {
-    public class OCSDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
+    public class OCSDbContext : IdentityDbContext<AppUser, IdentityRole<int>,int>
     {
         public OCSDbContext(DbContextOptions<OCSDbContext> options)
             : base(options)

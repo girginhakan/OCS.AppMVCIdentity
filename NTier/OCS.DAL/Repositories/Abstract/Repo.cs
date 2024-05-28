@@ -1,4 +1,5 @@
-﻿using OCS.DAL.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OCS.DAL.Data;
 using OCS.Entities.Abstract;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,12 @@ namespace OCS.DAL.Repositories.Abstract
 {
     public abstract class Repo<TEntity> : IRepo<TEntity> where TEntity : BaseEntity
     {
-        private readonly OCSDbContext _dbContext;
+        protected OCSDbContext _dbContext;
 
         protected Repo(OCSDbContext dbContext)
         {
             _dbContext = dbContext;
+            _dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTrackingWithIdentityResolution;
         }
 
         public int Add(TEntity entity)
@@ -32,12 +34,12 @@ namespace OCS.DAL.Repositories.Abstract
 
         public TEntity? Get(int id)
         {
-            return _dbContext.Set<TEntity>().Find(id);
+            return _dbContext.Set<TEntity>().AsNoTracking().SingleOrDefault(e=>e.Id==id);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return _dbContext.Set<TEntity>().ToList();
+            return _dbContext.Set<TEntity>().AsNoTracking().ToList();
         }
 
         public int Update(TEntity entity)

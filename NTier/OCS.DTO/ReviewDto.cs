@@ -1,13 +1,13 @@
-﻿using OCS.Entities.Abstract;
+﻿using OCS.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.Entities.Concrete
+namespace OCS.DTO
 {
-    public class Review : BaseEntity
+    public class ReviewDto:BaseDto
     {
         public int ProductId { get; set; }
         //public int AppUserId { get; set; }
@@ -18,8 +18,5 @@ namespace OCS.Entities.Concrete
 
         //public AppUser AppUser{ get; set; }
         public Product Product { get; set; }
-
-
-
     }
 }

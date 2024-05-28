@@ -1,4 +1,5 @@
-﻿using OCS.DAL.Repositories.Abstract;
+﻿using AutoMapper;
+using OCS.DAL.Repositories.Abstract;
 using OCS.DAL.Repositories.Concrete;
 using OCS.DAL.Services.Abstract;
 using OCS.DTO;
@@ -15,6 +16,10 @@ namespace OCS.DAL.Services.Concrete
     {
         public CategoryService(CategoryRepo repo) : base(repo)
         {
+            MapperConfiguration config = new MapperConfiguration(config =>
+            {
+                //Profile profile = new Cate
+            });
         }
     }
 }

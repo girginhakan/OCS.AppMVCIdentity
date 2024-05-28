@@ -51,6 +51,12 @@ namespace OCS.BLL.Abstract
             return _service.Delete(dto);
         }
 
+        public int Delete(int id)
+        {
+            return _service.Delete(id);
+        }
+
+
         public TViewModel? Get(int id)
         {
             TDto? dto= _service.Get(id);

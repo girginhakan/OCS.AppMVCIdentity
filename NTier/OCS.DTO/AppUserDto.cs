@@ -1,28 +1,26 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using OCS.Common.Enums;
+﻿using OCS.Common.Enums;
+using OCS.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.Entities.Concrete
+namespace OCS.DTO
 {
-    public class AppUser:IdentityUser<int>
+    public class AppUserDto:BaseDto
     {
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateOnly BirthDate { get; set; }
         public Gender Gender { get; set; }
 
-        public bool IsSubscriber { get; set; }=false;
+        public bool IsSubscriber { get; set; } = false;
         public DateTime? SubscriptionStartDate { get; set; }
         public DateTime? SubscriptionEndDate { get; set; }
-        public int DailyFreeItemCount { get; set; } = 5; // Günlük ücretsiz alınabilecek kahve sayısı
+        public int DailyFreeItemCount { get; set; } = 5; 
         public DateTime? LastFreeItemDate { get; set; }
-        //Buraya birde bir kahve aldıktan sonra diğerini alabilmesi için en az 1 saat geçmesi gerekmektedir ve aynı anda 2 veya daha fazla kahve alınamamaktadır.
-
+       
         // Navigation properties
         public ICollection<Order> Orders { get; set; }
         public ICollection<Review> Reviews { get; set; }

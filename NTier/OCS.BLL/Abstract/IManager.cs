@@ -17,6 +17,7 @@ namespace OCS.BLL.Abstract
         int Add(TViewModel viewModel);
         int Update(TViewModel viewModel);
         int Delete(TViewModel viewModel);
+        int Delete(int id);
         IEnumerable<TViewModel> GetAll();
         TViewModel? Get(int id);
     }

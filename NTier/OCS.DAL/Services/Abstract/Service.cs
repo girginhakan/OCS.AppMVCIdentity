@@ -17,7 +17,7 @@ namespace OCS.DAL.Services.Abstract
         where TDto : BaseDto
     {
         protected IMapper _mapper;
-        protected Repo<TEntity> _repo;
+        public Repo<TEntity> _repo;
 
         public Service(Repo<TEntity> repo )
         {
@@ -45,6 +45,13 @@ namespace OCS.DAL.Services.Abstract
         {
             TEntity entity = _mapper.Map<TEntity>(dto);
             return _repo.Delete(entity);
+        }
+
+        public int Delete(int id)
+        {
+            TDto? dto = this.Get(id);
+
+            return this.Delete(dto);
         }
 
         public TDto? Get(int id)

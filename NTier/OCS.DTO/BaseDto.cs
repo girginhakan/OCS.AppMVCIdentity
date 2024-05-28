@@ -9,5 +9,6 @@ namespace OCS.DTO
     public class BaseDto
     {
         public int Id { get; set; }
+        public int RowNum {  get; set; }
     }
 }
