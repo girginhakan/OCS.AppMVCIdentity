@@ -9,13 +9,11 @@ namespace OCS.DTO
 {
     public class OrderDto:BaseDto
     {
-        //public int AppUserId { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalAmount { get; set; } = 0;
         public string OrderStatus { get; set; }
 
 
-        //public AppUser AppUser { get; set; }
         public ICollection<OrderItemDto> OrderItemsDto { get; set; }
         public ICollection<PaymentDto> PaymentsDto { get; set; }
     }

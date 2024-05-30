@@ -1,13 +1,13 @@
-﻿using OCS.Entities.Concrete;
+﻿using OCS.ViewModel.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.DTO
+namespace OCS.ViewModel.Review
 {
-    public class ReviewDto:BaseDto
+    public class ReviewViewModel:BaseViewModel
     {
         public int ProductId { get; set; }
         public int Rating { get; set; }
@@ -15,6 +15,8 @@ namespace OCS.DTO
         public DateTime ReviewDate { get; set; }
 
 
-        public ProductDto ProductDto { get; set; }
+
+        public ProductViewModel ProductViewModel { get; set; }
+
     }
 }

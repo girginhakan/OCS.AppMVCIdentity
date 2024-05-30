@@ -23,7 +23,6 @@ namespace OCS.DAL.Profiles
 
             CreateMap<OrderItem, OrderItemDto>().ForMember(dest => dest.OrderDto, opt => opt.Ignore());
             CreateMap<OrderItemDto, OrderItem>().ForMember(dest => dest.Order, opt => opt.Ignore());
-            //eksik
         }
     }
 }

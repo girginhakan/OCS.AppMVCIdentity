@@ -1,0 +1,23 @@
+﻿@using OCS.ViewModel.Category
+@model IEnumerable<CategoryViewModel>
+
+<table class="table table-warning table-hover table-bordered">
+    <tr>
+        <td>Kategori Adı</td>
+        <td>Açıklama</td>
+        <td>İşlemler</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>
+                <a asp-action="ArabaGuncelle" asp-route-id="@item.Id" class="btn btn-warning">Güncelle</a>
+                <a asp-action="ArabaSil" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>

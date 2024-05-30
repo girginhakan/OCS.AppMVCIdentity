@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OCS.BLL.Concrete;
+using OCS.BLL.Managers.Concrete;
+using OCS.ViewModel.Category;
 
 namespace OCS.AdminApp.Controllers
 {
@@ -7,11 +8,20 @@ namespace OCS.AdminApp.Controllers
     {
         
         private CategoryManager _categoryManager;
-        //private ProductManager
+        private ProductManager _productManager;
+
+        public CategoryController(CategoryManager categoryManager, ProductManager productManager)
+        {
+            _categoryManager = categoryManager;
+            _productManager = productManager;
+        }
+
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<CategoryViewModel> categories = _categoryManager.GetAll();
+
+            return View(categories);
         }
     }
 }

@@ -3,7 +3,6 @@ using AutoMapper.EquivalencyExpression;
 using AutoMapper.Extensions.ExpressionMapping;
 using OCS.DAL.Profiles;
 using OCS.DAL.Repositories.Abstract;
-using OCS.DAL.Repositories.Concrete;
 using OCS.DAL.Services.Abstract;
 using OCS.DTO;
 using OCS.Entities.Concrete;
@@ -15,18 +14,16 @@ using System.Threading.Tasks;
 
 namespace OCS.DAL.Services.Concrete
 {
-    public class CategoryService : Service<Category, CategoryDto>
+    public class PaymentService : Service<Payment, PaymentDto>
     {
-        public CategoryService(CategoryRepo repo) : base(repo)
+        public PaymentService(Repo<Payment> repo) : base(repo)
         {
-
             MapperConfiguration _config = new MapperConfiguration(cfg =>
             {
                 cfg.AddExpressionMapping().AddCollectionMappers();
-                cfg.AddProfile<CategoryProfile>();
+                cfg.AddProfile<PaymentProfile>();
             });
-            
-            base._mapper=_config.CreateMapper();
+            base._mapper = _config.CreateMapper();
         }
     }
 }

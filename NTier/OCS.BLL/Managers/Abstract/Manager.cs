@@ -11,14 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.BLL.Abstract
+namespace OCS.BLL.Managers.Abstract
 {
-    public abstract class Manager<TDto,TViewModel,TEntity>:IManager<TDto,TViewModel>
+    public abstract class Manager<TDto, TViewModel, TEntity> : IManager<TDto, TViewModel>
         where TViewModel : BaseViewModel
         where TEntity : BaseEntity
         where TDto : BaseDto
     {
-        protected Service<TEntity,TDto> _service;
+        protected Service<TEntity, TDto> _service;
         protected IMapper _mapper;
         protected int _appUserId;
 
@@ -27,7 +27,7 @@ namespace OCS.BLL.Abstract
             MapperConfiguration _config = new MapperConfiguration(cfg =>
             {
                 cfg.AddExpressionMapping().AddCollectionMappers();
-                cfg.CreateMap<TDto,TViewModel>().ReverseMap();
+                cfg.CreateMap<TDto, TViewModel>().ReverseMap();
             });
             _mapper = _config.CreateMapper();
             _service = service;
@@ -35,12 +35,12 @@ namespace OCS.BLL.Abstract
 
         public IMapper Mapper
         {
-            set { _mapper=value; }
+            set { _mapper = value; }
         }
 
         public int Add(TViewModel viewModel)
         {
-            TDto dto= _mapper.Map<TDto>(viewModel);
+            TDto dto = _mapper.Map<TDto>(viewModel);
             return _service.Add(dto);
 
         }
@@ -59,13 +59,13 @@ namespace OCS.BLL.Abstract
 
         public TViewModel? Get(int id)
         {
-            TDto? dto= _service.Get(id);
+            TDto? dto = _service.Get(id);
             return _mapper.Map<TViewModel>(dto);
         }
 
         public virtual IEnumerable<TViewModel> GetAll()
         {
-            IEnumerable<TDto> list= _service.GetAll().ToList();
+            IEnumerable<TDto> list = _service.GetAll().ToList();
 
             return _mapper.Map<IEnumerable<TViewModel>>(list);
 

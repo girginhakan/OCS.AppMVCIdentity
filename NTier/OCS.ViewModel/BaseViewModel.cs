@@ -8,5 +8,9 @@ namespace OCS.ViewModel
 {
     public abstract class BaseViewModel
     {
+        public int? Id { get; set; }
+        public int? RowNum { get; set; }
+        public int? AppUserId { get; set; }
+
     }
 }

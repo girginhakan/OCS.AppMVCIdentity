@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OCS.ViewModel.Product;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,12 @@ namespace OCS.ViewModel.Category
 {
     public class CategoryViewModel:BaseViewModel
     {
-        public int? Id { get; set; }
-        public int? RowNum { get; set; }
+       
         public string Name { get; set; }
         public string Description { get; set; }
-        public int? AppUserId { get; set; }
+
+        public ICollection<ProductViewModel> ProductsViewModel { get; set; }
+
 
         //public class CategoryEditViewModel : BaseViewModel
         //{

@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCS.BLL.Abstract
+namespace OCS.BLL.Managers.Abstract
 {
-    public interface IManager<Tdto,TViewModel> 
+    public interface IManager<Tdto, TViewModel>
         where Tdto : BaseDto
-        where TViewModel:BaseViewModel
+        where TViewModel : BaseViewModel
     {
         IMapper Mapper { set; }
         int Add(TViewModel viewModel);
