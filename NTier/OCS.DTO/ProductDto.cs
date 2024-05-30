@@ -17,8 +17,8 @@ namespace OCS.DTO
         public int CategoryId { get; set; }
 
 
-        public Category Category { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public CategoryDto CategoryDto { get; set; }
+        public ICollection<OrderItemDto> OrderItemsDto { get; set; }
+        public ICollection<ReviewDto> ReviewsDto { get; set; }
     }
 }

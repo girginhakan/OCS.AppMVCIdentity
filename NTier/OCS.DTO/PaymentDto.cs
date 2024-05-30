@@ -15,6 +15,6 @@ namespace OCS.DTO
         public decimal Amount { get; set; }
 
 
-        public Order Order { get; set; }
+        public OrderDto OrderDto { get; set; }
     }
 }

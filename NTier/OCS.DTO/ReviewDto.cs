@@ -17,6 +17,6 @@ namespace OCS.DTO
 
 
         //public AppUser AppUser{ get; set; }
-        public Product Product { get; set; }
+        public ProductDto ProductDto { get; set; }
     }
 }

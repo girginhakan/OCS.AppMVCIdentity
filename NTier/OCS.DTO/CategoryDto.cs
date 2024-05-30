@@ -13,7 +13,7 @@ namespace OCS.DTO
         public string Description { get; set; }
         public int AppUserId { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<ProductDto> ProductsDto { get; set; }
 
     }
 }

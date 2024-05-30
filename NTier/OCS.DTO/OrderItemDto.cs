@@ -16,7 +16,7 @@ namespace OCS.DTO
 
 
 
-        public Order Order { get; set; }
-        public Product Product { get; set; }
+        public OrderDto OrderDto { get; set; }
+        public ProductDto ProductDto { get; set; }
     }
 }

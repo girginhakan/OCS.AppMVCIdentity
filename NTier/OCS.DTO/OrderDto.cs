@@ -16,7 +16,7 @@ namespace OCS.DTO
 
 
         //public AppUser AppUser { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Payment> Payments { get; set; }
+        public ICollection<OrderItemDto> OrderItemsDto { get; set; }
+        public ICollection<PaymentDto> PaymentsDto { get; set; }
     }
 }
