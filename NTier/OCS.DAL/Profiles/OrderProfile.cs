@@ -9,20 +9,23 @@ using System.Threading.Tasks;
 
 namespace OCS.DAL.Profiles
 {
-    public class OrderProfile:Profile
+    public class OrderProfile : Profile
     {
         public OrderProfile()
         {
             CreateMap<Order, OrderDto>().ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems));
             CreateMap<OrderDto, Order>().ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems));
 
-            CreateMap<Order,OrderDto>().ForMember(dest=>dest.Payments,opt=>opt.MapFrom(src => src.Payments));
-            CreateMap<OrderDto,Order>().ForMember(dest=>dest.Payments,opt=>opt.MapFrom(src => src.Payments));
+            CreateMap<Order, OrderDto>().ForMember(dest => dest.Payments, opt => opt.MapFrom(src => src.Payments));
+            CreateMap<OrderDto, Order>().ForMember(dest => dest.Payments, opt => opt.MapFrom(src => src.Payments));
 
 
 
-            CreateMap<OrderItem, OrderItemDto>().ForMember(dest => dest.Order, opt => opt.Ignore());
-            CreateMap<OrderItemDto, OrderItem>().ForMember(dest => dest.Order, opt => opt.Ignore());
+            CreateMap<OrderItem, OrderItemDto>().ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.Order));
+            CreateMap<OrderItemDto, OrderItem>().ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.Order));
+
+            CreateMap<OrderItem, OrderItemDto>().ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product));
+            CreateMap<OrderItemDto, OrderItem>().ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product));
 
 
             CreateMap<Payment, PaymentDto>().ForMember(dest => dest.Order, opt => opt.Ignore());

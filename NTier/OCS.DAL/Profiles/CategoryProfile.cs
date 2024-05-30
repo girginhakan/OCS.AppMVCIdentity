@@ -30,8 +30,7 @@ namespace OCS.DAL.Profiles
             CreateMap<ProductDto, Product>().ForMember(dest=>dest.Reviews, opt => opt.MapFrom(src=>src.Reviews));
             CreateMap<Product, ProductDto>().ForMember(dest=>dest.Reviews, opt => opt.MapFrom(src => src.Reviews));
 
-            CreateMap<Review,ReviewDto>().ForMember(dest=>dest.Product, opt => opt.MapFrom(src => src.Product));
-            CreateMap<ReviewDto, Review>().ForMember(dest=>dest.Product, opt => opt.MapFrom(src => src.Product));
+
 
             CreateMap<CategoryDto,Category>().ReverseMap();
 
