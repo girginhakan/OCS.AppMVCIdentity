@@ -1,5 +1,6 @@
 ﻿using OCS.BLL.Managers.Abstract;
 using OCS.DAL.Services.Abstract;
+using OCS.DAL.Services.Concrete;
 using OCS.DTO;
 using OCS.Entities.Concrete;
 using OCS.ViewModel.OrderItem;
@@ -11,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace OCS.BLL.Managers.Concrete
 {
-    public class OrderItemManager : Manager<OrderItemDto, OrderItemViewModel, Order>
+    public class OrderItemManager : Manager<OrderItemDto, OrderItemViewModel, OrderItem>
     {
-        public OrderItemManager(Service<Order, OrderItemDto> service) : base(service)
+        public OrderItemManager(OrderItemService service) : base(service)
         {
         }
     }

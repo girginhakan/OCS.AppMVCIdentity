@@ -1,5 +1,6 @@
 ﻿using OCS.BLL.Managers.Abstract;
 using OCS.DAL.Services.Abstract;
+using OCS.DAL.Services.Concrete;
 using OCS.DTO;
 using OCS.Entities.Concrete;
 using OCS.ViewModel.Payment;
@@ -13,7 +14,7 @@ namespace OCS.BLL.Managers.Concrete
 {
     public class PaymentManager : Manager<PaymentDto, PaymentViewModel, Payment>
     {
-        public PaymentManager(Service<Payment, PaymentDto> service) : base(service)
+        public PaymentManager(PaymentService service) : base(service)
         {
         }
     }

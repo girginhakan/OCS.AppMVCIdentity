@@ -3,6 +3,7 @@ using AutoMapper.EquivalencyExpression;
 using AutoMapper.Extensions.ExpressionMapping;
 using OCS.DAL.Profiles;
 using OCS.DAL.Repositories.Abstract;
+using OCS.DAL.Repositories.Concrete;
 using OCS.DAL.Services.Abstract;
 using OCS.DTO;
 using OCS.Entities.Concrete;
@@ -16,7 +17,7 @@ namespace OCS.DAL.Services.Concrete
 {
     public class ReviewService : Service<Review, ReviewDto>
     {
-        public ReviewService(Repo<Review> repo) : base(repo)
+        public ReviewService(ReviewRepo repo) : base(repo)
         {
             MapperConfiguration _config = new MapperConfiguration(cfg =>
             {

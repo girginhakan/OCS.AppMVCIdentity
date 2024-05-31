@@ -1,5 +1,6 @@
 ﻿using OCS.BLL.Managers.Abstract;
 using OCS.DAL.Services.Abstract;
+using OCS.DAL.Services.Concrete;
 using OCS.DTO;
 using OCS.Entities.Concrete;
 using OCS.ViewModel.Review;
@@ -13,7 +14,7 @@ namespace OCS.BLL.Managers.Concrete
 {
     public class ReviewManager : Manager<ReviewDto, ReviewViewModel, Review>
     {
-        public ReviewManager(Service<Review, ReviewDto> service) : base(service)
+        public ReviewManager(ReviewService service) : base(service)
         {
         }
     }
