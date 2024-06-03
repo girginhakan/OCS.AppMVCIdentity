@@ -1,23 +1,34 @@
 ﻿@using OCS.ViewModel.Category
 @model IEnumerable<CategoryViewModel>
 
-<table class="table table-warning table-hover table-bordered">
+<h1>Kategoriler</h1>
+
+
+<a class=" btn btn-outline-success" asp-controller="Category" asp-action="Create">Yeni Kategori</a>
+<hr />
+<table class="table table-warning table-hover  table-bordered">
     <tr>
-        <td>Kategori Adı</td>
-        <td>Açıklama</td>
-        <td>İşlemler</td>
+        <td>#</td>
+        <td>Adı</td>
+        <td>Açıklaması</td>
+        <td>İşlemler    </td>
+      
+
     </tr>
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RowNum</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Description</td>
-            <td>
-                <a asp-action="ArabaGuncelle" asp-route-id="@item.Id" class="btn btn-warning">Güncelle</a>
-                <a asp-action="ArabaSil" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
-            </td>
-        </tr>
+                <td>
+                    <a asp-controller="Category" asp-action="Update" asp-route-id="@item.Id" class="btn btn-secondary">Güncelle</a>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+
+            </tr>
+        }
     }
-
 </table>

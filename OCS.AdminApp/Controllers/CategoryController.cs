@@ -23,5 +23,20 @@ namespace OCS.AdminApp.Controllers
 
             return View(categories);
         }
+
+        public IActionResult Create()
+        {
+            CategoryViewModel model = new CategoryViewModel();
+
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Create(CategoryViewModel model)
+        {
+            model.AppUserId = 1;
+            _categoryManager.Add(model);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

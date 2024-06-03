@@ -1,0 +1,21 @@
+﻿@using OCS.ViewModel.Category
+@model CategoryViewModel
+<h1>Yeni Kategori</h1>
+
+
+
+<form asp-controller="Category" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Adı</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Açıklaması</label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+   
+    <br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+    <a asp-controller="Category" asp-action="Index" type="submit" class="btn btn-warning">Geri</a>
+
+</form>
